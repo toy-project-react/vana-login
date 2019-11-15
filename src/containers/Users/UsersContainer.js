@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import UsersPresenter from './UsersPresenter';
-import { requestFetchUsers } from 'modules/users';
 import { changeInit } from 'modules/noti';
+import { connect } from 'react-redux';
+import { requestFetchUsers } from 'modules/users';
 
 const mapStateToProps = state => ({
   userInfo: state.auth.userInfo,
@@ -39,7 +40,4 @@ class UsersContainer extends Component {
     );
   }
 }
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UsersContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

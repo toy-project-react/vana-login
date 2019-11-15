@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+
 import produce from 'immer';
 
 const OPEN_POPUP = '@noti/OPEN_POPUP';

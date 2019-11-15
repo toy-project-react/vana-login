@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { PasswordRenderInput, RenderInput } from 'components/Inputs';
+import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
-import { RenderInput, PasswordRenderInput } from 'components/Inputs';
 import styled from 'styled-components';
 
 const validate = values => {

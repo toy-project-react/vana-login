@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
+import DashboardPresenter from './DashboardPresenter';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import DashboardPresenter from './DashboardPresenter';
 
 const mapStateToProps = state => ({});
 

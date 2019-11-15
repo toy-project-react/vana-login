@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
+import LoginPresenter from './LoginPresenter';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { requestLogin } from 'modules/auth';
 import { resetError } from 'modules/noti';
-import LoginPresenter from './LoginPresenter';
 
 const mapStateToProps = state => ({
   authentication: state.auth.authentication,
@@ -51,7 +52,4 @@ class LoginContainer extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

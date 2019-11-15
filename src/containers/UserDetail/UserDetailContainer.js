@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import UserDetailPresenter from './UserDetailPresenter';
-import * as usersActions from 'modules/users';
 import * as authActions from 'modules/auth';
 import * as notiActions from 'modules/noti';
+import * as usersActions from 'modules/users';
+
+import React, { Component } from 'react';
+
+import UserDetailPresenter from './UserDetailPresenter';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
   email: state.auth.email,

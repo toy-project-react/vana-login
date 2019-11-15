@@ -1,8 +1,9 @@
-// 등록 & 사용자 setting 페이지 관련 사이드 이펙트 정의
-import { takeEvery, put, call } from 'redux-saga/effects';
 import * as api from 'apis/service';
 import * as usersActions from 'modules/users';
-import { requestApiCall, responseApiCall, catchError } from 'modules/noti';
+
+// 등록 & 사용자 setting 페이지 관련 사이드 이펙트 정의
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { catchError, requestApiCall, responseApiCall } from 'modules/noti';
 
 export function* fetchUsers(action) {
   const { data } = action.payload;

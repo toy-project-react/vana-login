@@ -1,5 +1,5 @@
-import React from 'react';
 import AddUserForm from 'components/forms/AddUserForm';
+import React from 'react';
 
 const JoinPresenter = ({ onSubmit, errorData }) => {
   return (

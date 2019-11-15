@@ -23,8 +23,8 @@ export const RenderInput = ({
   return (
     <div
       className={
-        (!notUseError && (serverError && serverError.isError)) ||
-        (!notUseError && (meta.visited && meta.error))
+        (!notUseError && serverError && serverError.isError) ||
+        (!notUseError && meta.visited && meta.error)
           ? 'error'
           : null
       }
@@ -72,8 +72,8 @@ export const PasswordRenderInput = ({
   return (
     <div
       className={
-        (!notUseError && (serverError && serverError.isError)) ||
-        (!notUseError && (meta.visited && meta.error))
+        (!notUseError && serverError && serverError.isError) ||
+        (!notUseError && meta.visited && meta.error)
           ? 'error'
           : null
       }

@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'router';
-import { i18n } from 'element-react';
-import locale from 'element-react/src/locale/lang/ko';
 import 'element-theme-default';
-import rootReducer from 'modules';
-import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from 'sagas';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { Provider } from 'react-redux';
 import 'assets/styles/index.scss';
-
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
+
+import { applyMiddleware, createStore } from 'redux';
+
+import App from 'router';
+import { Provider } from 'react-redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
+import { i18n } from 'element-react';
+import locale from 'element-react/src/locale/lang/ko';
+import rootReducer from 'modules';
+import rootSaga from 'sagas';
 
 i18n.use(locale);
 

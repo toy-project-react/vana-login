@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import React, { useState } from 'react';
+
 import { PasswordRenderInput } from 'components/Inputs';
 
 const validate = values => {

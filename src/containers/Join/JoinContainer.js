@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import JoinPresenter from './JoinPresenter';
+import { connect } from 'react-redux';
 import { requestRegistUser } from 'modules/auth';
 import { resetError } from 'modules/noti';
 
@@ -40,7 +41,4 @@ class JoinContainer extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(JoinContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(JoinContainer);

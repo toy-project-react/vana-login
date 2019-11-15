@@ -1,5 +1,5 @@
-import React from 'react';
 import AuthContainer from 'containers/AuthContainer';
+import React from 'react';
 const DefaultLayout = props => {
   return (
     <section>

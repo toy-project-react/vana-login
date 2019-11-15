@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { RenderInput } from 'components/Inputs';
+import React, { useState } from 'react';
+
 import { RenderFormDropDown } from 'components/DropDown';
+import { RenderInput } from 'components/Inputs';
+import { connect } from 'react-redux';
 
 const validate = values => {
   const errors = {};

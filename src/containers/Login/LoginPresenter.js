@@ -1,5 +1,5 @@
-import React from 'react';
 import LoginForm from 'components/forms/LoginForm';
+import React from 'react';
 
 const LoginPresenter = ({ onSubmit, errorData }) => {
   return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { changeCurrent, changeLimitOffset, changeStartEnd } from 'modules/noti';
+
 import { connect } from 'react-redux';
-import { changeLimitOffset, changeCurrent, changeStartEnd } from 'modules/noti';
 
 const mapStateToProps = state => {
   return {
@@ -46,7 +47,7 @@ class Pagination extends Component {
       pagination: { current, start, end }
     } = this.props;
     if (current > 1) {
-      if (current % 5 === 1) {
+      if (current - start === 1) {
         const s = start - 5;
         const e = end - 5;
         this.updateStartEndPage(s, e);
@@ -61,7 +62,7 @@ class Pagination extends Component {
     } = this.props;
     const max = this.max;
     if (current < max) {
-      if (current !== 1 && (current + 1) % 5 === 1) {
+      if (current !== 1 && current === end) {
         const s = start + 5;
         const e = end + 5;
         this.updateStartEndPage(s, e);
@@ -172,7 +173,4 @@ class Pagination extends Component {
     );
   }
 }
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Pagination);
+export default connect(mapStateToProps, mapDispatchToProps)(Pagination);

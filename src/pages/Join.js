@@ -1,5 +1,5 @@
-import React from 'react';
 import JoinContainer from 'containers/JoinContainer';
+import React from 'react';
 
 const Join = () => {
   return (

@@ -13,7 +13,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(config => {
-  const token = sessionStorage.getItem('token');
+  const token = localStorage.getItem('token');
   config.headers.token = token ? `${token}` : '';
   return config;
 });
@@ -42,8 +42,8 @@ export default (url, method, payload) => {
 };
 
 function resetStorage() {
-  sessionStorage.removeItem('userInfo');
-  sessionStorage.removeItem('email');
-  sessionStorage.removeItem('authentication');
-  sessionStorage.removeItem('token');
+  localStorage.removeItem('userInfo');
+  localStorage.removeItem('email');
+  localStorage.removeItem('authentication');
+  localStorage.removeItem('token');
 }

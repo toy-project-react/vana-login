@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+
 import produce from 'immer';
 
 const FETCH_USERS = '@users/FETCH_USERS';

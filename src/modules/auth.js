@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+
 import produce from 'immer';
 
 // login
@@ -27,11 +28,11 @@ export const successUpdateUser = createAction(SUCCESS_UPDATE_USER);
 
 const initialState = {
   // auth
-  code: sessionStorage.getItem('code') || '',
-  email: sessionStorage.getItem('email') || '',
-  authentication: sessionStorage.getItem('authentication') ? true : false,
-  userInfo: JSON.parse(sessionStorage.getItem('userInfo')) || {},
-  token: sessionStorage.getItem('token') || ''
+  code: localStorage.getItem('code') || '',
+  email: localStorage.getItem('email') || '',
+  authentication: localStorage.getItem('authentication') ? true : false,
+  userInfo: JSON.parse(localStorage.getItem('userInfo')) || {},
+  token: localStorage.getItem('token') || ''
 };
 
 export default handleActions(
@@ -42,20 +43,20 @@ export default handleActions(
         draft.userInfo = action.payload;
         draft.email = action.payload.email;
         draft.token = action.payload.token;
-        sessionStorage.setItem('authentication', true);
-        sessionStorage.setItem('token', draft.token);
-        sessionStorage.setItem('email', draft.email);
-        sessionStorage.setItem('userInfo', JSON.stringify(draft.userInfo));
+        localStorage.setItem('authentication', true);
+        localStorage.setItem('token', draft.token);
+        localStorage.setItem('email', draft.email);
+        localStorage.setItem('userInfo', JSON.stringify(draft.userInfo));
       }),
     [FAILURE_LOGIN]: (state, action) => produce(state, draft => {}),
     [REQUEST_LOGOUT]: (state, action) =>
       produce(state, draft => {
         draft.authentication = false;
-        sessionStorage.removeItem('authentication');
-        sessionStorage.removeItem('code');
-        sessionStorage.removeItem('token');
-        sessionStorage.removeItem('email');
-        sessionStorage.removeItem('userInfo');
+        localStorage.removeItem('authentication');
+        localStorage.removeItem('code');
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        localStorage.removeItem('userInfo');
       }),
     [SUCCESS_REGIST_USER]: (state, action) =>
       produce(state, draft => {
@@ -65,8 +66,8 @@ export default handleActions(
       produce(state, draft => {
         draft.email = action.payload.email;
         draft.code = action.payload.code;
-        sessionStorage.setItem('email', draft.email);
-        sessionStorage.setItem('code', draft.code);
+        localStorage.setItem('email', draft.email);
+        localStorage.setItem('code', draft.code);
       })
   },
   initialState

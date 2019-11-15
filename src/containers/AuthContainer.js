@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { requestLogout } from 'modules/auth';
 
 function mapStateToProps(state) {
@@ -41,7 +42,4 @@ class AuthContainer extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AuthContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer);

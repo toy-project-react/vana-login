@@ -1,6 +1,6 @@
+import auth from './auth';
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import auth from './auth';
 import noti from './noti';
 import users from './users';
 const rootReducer = combineReducers({

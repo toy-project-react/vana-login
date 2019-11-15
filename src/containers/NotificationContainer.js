@@ -1,8 +1,9 @@
+import { Alerts, ConfirmOk } from 'components/Alerts';
 import React, { Component } from 'react';
+
+import PasswordForm from 'components/settings/PasswordForm';
 import { closePopup } from 'modules/noti';
 import { connect } from 'react-redux';
-import { Alerts, ConfirmOk } from 'components/Alerts';
-import PasswordForm from 'components/settings/PasswordForm';
 
 const mapStateToProps = state => ({
   isOpenPopup: state.noti.isOpenPopup,

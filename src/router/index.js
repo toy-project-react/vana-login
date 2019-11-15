@@ -1,13 +1,14 @@
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { DefaultLayout, FullSizeLayout } from 'components/layouts';
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { FullSizeLayout, DefaultLayout } from 'components/layouts';
-import { NotFound } from 'pages';
-import PrivateRoute from './PrivateRoute';
-import NotificationContainer from 'containers/NotificationContainer';
+
 import Dashboard from 'containers/Dashboard';
-import Users from 'containers/Users';
-import Login from 'containers/Login';
 import Join from 'containers/Join';
+import Login from 'containers/Login';
+import { NotFound } from 'pages';
+import NotificationContainer from 'containers/NotificationContainer';
+import PrivateRoute from './PrivateRoute';
+import Users from 'containers/Users';
 
 export default class App extends Component {
   render() {

@@ -1,8 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import NoData from 'components/NoData';
-import Users from 'components/settings/Users';
 import Pagination from 'components/Pagination';
+import React from 'react';
+import Users from 'components/settings/Users';
 
 const UsersPresenter = ({
   loading,

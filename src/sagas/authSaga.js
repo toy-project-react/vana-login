@@ -1,12 +1,13 @@
-import { takeEvery, put, call } from 'redux-saga/effects';
 import * as api from 'apis/service';
 import * as authActions from 'modules/auth';
+
+import { call, put, takeEvery } from 'redux-saga/effects';
 import {
+  catchError,
   openPopup,
-  showErrorMessage,
   requestApiCall,
   responseApiCall,
-  catchError
+  showErrorMessage
 } from 'modules/noti';
 
 // login 관련 saga
@@ -45,7 +46,7 @@ export function* updateUser(action) {
       authActions.successUpdateUser({
         ...action.payload,
         ...result,
-        email: sessionStorage.getItem('email') || action.payload.email
+        email: localStorage.getItem('email') || action.payload.email
       })
     );
     yield put(openPopup({ ...popup }));
